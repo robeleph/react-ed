@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-import styles from './App.module.css';
+import './App.css';
+import { ReactComponent as Check } from './logo.svg';
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
@@ -102,8 +103,8 @@ const App = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.headlinePrimary}>My Hacker Stories</h1>
+    <div className="container">
+      <h1 className="headline-primary">My Hacker Stories</h1>
 
       <SearchForm
         searchTerm={searchTerm}
@@ -127,7 +128,7 @@ const SearchForm = ({
   onSearchInput,
   onSearchSubmit,
 }) => (
-  <form onSubmit={onSearchSubmit} className={styles.searchForm}>
+  <form onSubmit={onSearchSubmit} className="search-form">
     <InputWithLabel
       id="search"
       value={searchTerm}
@@ -140,7 +141,7 @@ const SearchForm = ({
     <button
       type="submit"
       disabled={!searchTerm}
-      className={`${styles.button} ${styles.buttonLarge}`}
+      className="button button_large"
     >
       Submit
     </button>
@@ -165,7 +166,7 @@ const InputWithLabel = ({
 
   return (
     <>
-      <label htmlFor={id} className={styles.label}>
+      <label htmlFor={id} className="label">
         {children}
       </label>
       &nbsp;
@@ -175,7 +176,7 @@ const InputWithLabel = ({
         type={type}
         value={value}
         onChange={onInputChange}
-        className={styles.input}
+        className="input"
       />
     </>
   );
@@ -191,7 +192,7 @@ const List = ({ list, onRemoveItem }) =>
   ));
 
 const Item = ({ item, onRemoveItem }) => (
-  <div className={styles.item}>
+  <div className="item">
     <span style={{ width: '40%' }}>
       <a href={item.url}>{item.title}</a>
     </span>
@@ -202,9 +203,9 @@ const Item = ({ item, onRemoveItem }) => (
       <button
         type="button"
         onClick={() => onRemoveItem(item)}
-        className={`${styles.button} ${styles.buttonSmall}`}
+        className="button button_small"
       >
-        Dismiss
+        <Check height="18px" width="18px" />
       </button>
     </span>
   </div>

@@ -8,7 +8,7 @@
   color: #171212;
 }
 
-.headlinePrimary {
+.headline-primary {
   font-size: 48px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -46,15 +46,20 @@
   color: #ffffff;
 }
 
-.buttonSmall {
+.button:hover > svg > g {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.button_small {
   padding: 5px;
 }
 
-.buttonLarge {
+.button_large {
   padding: 10px;
 }
 
-.searchForm {
+.search-form {
   padding: 10px 0 20px 0;
   display: flex;
   align-items: baseline;
